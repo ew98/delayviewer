@@ -21,7 +21,10 @@ class Spinner:
         self._active = False
 
     def start(self, startingMsg='', startingMsgSpacer=70):
-        print(f'{startingMsg:<{startingMsgSpacer}}', end='       ', flush=True)
+        if startingMsgSpacer > 0:
+            print(f'{startingMsg:<{startingMsgSpacer}}', end='       ', flush=True)
+        else:
+            print(f'{startingMsg} ... ', end='  ', flush=True)
         self._active = True
         self.startTime = time.time()
 
